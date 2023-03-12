@@ -1,5 +1,5 @@
-
-# Godot-specific ignores
+# Godot 4+ specific ignores
+.godot/
 .godot/
 .import/
 export.cfg

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://g1c87cqjhovi"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_ng2jm"]
+[ext_resource type="PackedScene" uid="uid://31l4o3pvmw22" path="res://Boy.tscn" id="2_n6c00"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fxo1a"]
+radius = 0.742129
+height = 3.95782
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ng2jm")
+
+[node name="Boy" parent="." instance=ExtResource("2_n6c00")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120895, 1.99641, 0.220772)
+shape = SubResource("CapsuleShape3D_fxo1a")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="KnockBack" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.423945, 0)
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

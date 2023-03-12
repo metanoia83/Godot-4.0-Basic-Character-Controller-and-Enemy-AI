@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdqfy1k5mu5dm"]
+
+[ext_resource type="PackedScene" uid="uid://f8cx3tl2asyt" path="res://EnemyMesh.tscn" id="1_o6ib2"]
+[ext_resource type="Script" path="res://Enemy.gd" id="1_tdlu7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2vbwl"]
+radius = 0.743343
+height = 2.76858
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rvk2k"]
+radius = 10.0
+
+[node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
+script = ExtResource("1_tdlu7")
+
+[node name="EnemyMesh" parent="." instance=ExtResource("1_o6ib2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0553017, 1.384, 0.276508)
+shape = SubResource("CapsuleShape3D_2vbwl")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+agent_height_offset = 1.0
+avoidance_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="PlayerDetection" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection"]
+shape = SubResource("SphereShape3D_rvk2k")
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
