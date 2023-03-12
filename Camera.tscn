@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://fy6usfmoc4j"]
+
+[ext_resource type="Script" path="res://Camera.gd" id="1_lc1pg"]
+
+[node name="CameraPivot" type="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_lc1pg")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+collision_mask = 2
+spring_length = 15.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.959722, 0.280951, 0, -0.280951, 0.959722, 0, 8.72223, 16.7012)

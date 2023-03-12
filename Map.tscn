@@ -1,0 +1,115 @@
+[gd_scene load_steps=17 format=3 uid="uid://bgc7fvf17medm"]
+
+[ext_resource type="PackedScene" uid="uid://g1c87cqjhovi" path="res://Player.tscn" id="1_d58bd"]
+[ext_resource type="PackedScene" uid="uid://fy6usfmoc4j" path="res://Camera.tscn" id="2_f5awv"]
+[ext_resource type="PackedScene" uid="uid://bdqfy1k5mu5dm" path="res://Enemy.tscn" id="3_3fbb6"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_m4rym"]
+vertices = PackedVector3Array(9, 1, -29.5, 8.75, 1, -28.25, 10.75, 1, -28, 19.25, 1, -29.5, -10.5, 1, -28, -8.5, 1, -28.25, -8.75, 1, -29.5, -19.25, 1, -29.5, -10.25, 1, -22, -29.5, 1, 0, -29.5, 1, 7.25, -29.5, 1, 14.75, -14.75, 1, 29.5, -7.5, 1, 29.5, -29.5, 1, 7.25, -29.5, 1, 22, -29.5, 1, 29.5, -22.25, 1, 29.5, 22, 1, 29.5, 29.5, 1, 29.5, 29.5, 1, 22, 19.25, 1, -29.5, 10.75, 1, -28, 10.5, 1, -22, 29.5, 1, -7.5, 29.5, 1, -14.75, -10.25, 1, -22, -10.5, 1, -28, -19.25, 1, -29.5, -29.5, 1, -14.75, -29.5, 1, -7.5, -19.25, 1, -29.5, -29.5, 1, -29.5, -29.5, 1, -22.25, 29.5, 1, -22.25, 29.5, 1, -29.5, 19.25, 1, -29.5, -29.5, 1, 14.75, -29.5, 1, 22, -22.25, 1, 29.5, -14.75, 1, 29.5, 14.75, 1, 29.5, 22, 1, 29.5, 29.5, 1, 22, -19.25, 1, -29.5, -29.5, 1, -22.25, -29.5, 1, -14.75, 29.5, 1, -14.75, 29.5, 1, -22.25, 19.25, 1, -29.5, 29.5, 1, 0, 29.5, 1, -7.5, 10.5, 1, -22, -10.25, 1, -22, -29.5, 1, -7.5, -29.5, 1, 0, -29.5, 1, 7.25, -7.5, 1, 29.5, 0, 1, 29.5, 29.5, 1, 7.25, 0, 1, -22, -10.25, 1, -22, 14.75, 1, 29.5, 29.5, 1, 22, 29.5, 1, 14.75, 7.25, 1, 29.5, 7.25, 1, 29.5, 29.5, 1, 14.75, 29.5, 1, 7.25, 0, 1, 29.5, 29.5, 1, 7.25, 29.5, 1, 0, 10.5, 1, -22, 0, 1, -22, 0, 1, -29.5, -8.75, 1, -29.5, -8.5, 1, -28.25, 0, 1, -28.25, 8.75, 1, -28.25, 9, 1, -29.5, 0, 1, -29.5, 0, 1, -28.25, -9.5, 11, -27.25, -9.5, 11, -23, 0, 11, -23, 0, 11, -27.25, 0, 11, -23, 9.75, 11, -23, 9.75, 11, -27.25, 0, 11, -27.25, -9.25, 1, -27, -9.25, 1, -23.25, 0, 1, -23.25, 0, 1, -27, 0, 1, -23.25, 9.5, 1, -23.25, 9.5, 1, -27, 0, 1, -27)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(10, 9, 8), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(17, 16, 15), PackedInt32Array(20, 19, 18), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 25), PackedInt32Array(23, 25, 24), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 29), PackedInt32Array(29, 26, 30), PackedInt32Array(33, 32, 31), PackedInt32Array(36, 35, 34), PackedInt32Array(38, 37, 39), PackedInt32Array(39, 37, 40), PackedInt32Array(43, 42, 41), PackedInt32Array(46, 45, 44), PackedInt32Array(49, 48, 47), PackedInt32Array(52, 51, 50), PackedInt32Array(55, 54, 53), PackedInt32Array(57, 56, 58), PackedInt32Array(58, 56, 61), PackedInt32Array(58, 61, 60), PackedInt32Array(58, 60, 59), PackedInt32Array(63, 62, 64), PackedInt32Array(64, 62, 65), PackedInt32Array(67, 66, 68), PackedInt32Array(68, 66, 69), PackedInt32Array(71, 70, 72), PackedInt32Array(72, 70, 73), PackedInt32Array(77, 76, 74), PackedInt32Array(74, 76, 75), PackedInt32Array(81, 80, 78), PackedInt32Array(78, 80, 79), PackedInt32Array(85, 84, 82), PackedInt32Array(82, 84, 83), PackedInt32Array(89, 88, 86), PackedInt32Array(86, 88, 87), PackedInt32Array(93, 92, 90), PackedInt32Array(90, 92, 91), PackedInt32Array(97, 96, 94), PackedInt32Array(94, 96, 95)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11vi1"]
+albedo_color = Color(0.792157, 0.54902, 0.337255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nqxym"]
+size = Vector3(20, 10, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s37sn"]
+size = Vector3(20, 10, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rlwo"]
+albedo_color = Color(0.827451, 1, 0.501961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bvuyn"]
+size = Vector3(60, 1, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bkla"]
+size = Vector3(60, 1, 60)
+
+[sub_resource type="Gradient" id="Gradient_s4kd3"]
+offsets = PackedFloat32Array(0.175182, 0.744526)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1gkf5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rymn8"]
+in_3d_space = true
+generate_mipmaps = false
+seamless = true
+color_ramp = SubResource("Gradient_s4kd3")
+noise = SubResource("FastNoiseLite_1gkf5")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sg1x7"]
+sky_top_color = Color(0.286275, 0.682353, 0.87451, 1)
+sky_horizon_color = Color(0.478431, 0.733333, 0.854902, 1)
+sky_cover = SubResource("NoiseTexture2D_rymn8")
+ground_bottom_color = Color(0.741176, 0.682353, 0.545098, 1)
+ground_horizon_color = Color(0.65098, 0.611765, 0.568627, 1)
+
+[sub_resource type="Sky" id="Sky_ggxvx"]
+sky_material = SubResource("ProceduralSkyMaterial_sg1x7")
+
+[sub_resource type="Environment" id="Environment_n3n8x"]
+background_mode = 2
+sky = SubResource("Sky_ggxvx")
+
+[node name="Map" type="Node3D"]
+
+[node name="Spawn" type="Marker3D" parent="." groups=["Spawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.4656, -25.0915)
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_d58bd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55994, 10.4825, -25.0788)
+collision_layer = 5
+
+[node name="Enemy" parent="." instance=ExtResource("3_3fbb6")]
+transform = Transform3D(-0.981151, 0, -0.193241, 0, 1, 0, 0.193241, 0, -0.981151, 17.8334, 0.718278, 16.4437)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_3fbb6")]
+transform = Transform3D(-0.935444, 0, 0.353475, 0, 1, 0, -0.353475, 0, -0.935444, -17.4072, 0.718278, 15.3263)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_3fbb6")]
+transform = Transform3D(-0.935444, 0, 0.353475, 0, 1, 0, -0.353475, 0, -0.935444, -1.03596, 0.718278, 15.3263)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_3fbb6")]
+transform = Transform3D(0.79165, 0, 0.610975, 0, 1, 0, -0.610975, 0, 0.79165, -20.4437, 0.718278, -13.5038)
+
+[node name="Enemy5" parent="." instance=ExtResource("3_3fbb6")]
+transform = Transform3D(0.86877, 0, -0.495216, 0, 1, 0, 0.495216, 0, 0.86877, 19.684, 0.718278, -13.5038)
+
+[node name="CameraPivot" parent="." groups=["Camera"] instance=ExtResource("2_f5awv")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_m4rym")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.094, -25.1109)
+collision_layer = 3
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.40606, 0)
+material_override = SubResource("StandardMaterial3D_11vi1")
+mesh = SubResource("BoxMesh_nqxym")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.406, 0)
+shape = SubResource("BoxShape3D_s37sn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_3rlwo")
+mesh = SubResource("BoxMesh_bvuyn")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_4bkla")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.669364, 0.742935, 0, -0.742935, 0.669364, 0, 25.2649, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n3n8x")
