@@ -2,9 +2,9 @@ extends CharacterBody3D
 
 const JUMP_VELOCITY = 15
 const ANIM_IDLERUN = 0
-const KNOCKBACKJUMP = 20
 const ANIM_JUMP = 1
 const ANIM_DEAD= 2
+const KNOCKBACKJUMP = 20
 const RUN_BLEND_AMOUNT = 0.2
 const IDLE_BLEND_AMOUNT = 0.08
 const JUMP_BLEND_AMOUNT = 0.15
@@ -25,7 +25,7 @@ var direction = Vector3()
 @onready var animation = $Boy/AnimationTree
 
 var state
-enum {IDLERUN, JUMP, DEAD}
+enum {IDLERUN, JUMP, DEAD, ATTACK}
 
 
 func _ready():
@@ -50,8 +50,7 @@ func _physics_process(delta):
 	# HANDLES JUMP
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and !dead:
 		velocity.y = JUMP_VELOCITY
-		
-
+	
 	# HANDLES INPUT DIRECTION BASE ON THE CAMERA BASIS
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	direction = (camera.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -118,8 +117,11 @@ func change_state(new_state):
 		DEAD:
 			anim = ANIM_DEAD
 
+
+
 # HANDLES THE ANIMATION
 func animate():
+	
 
 	# ANIMATION FROM IDLE TO RUN & RUN TO IDLE
 	if (moving and !jumping) or (!moving and !jumping):

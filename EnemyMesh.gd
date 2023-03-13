@@ -19,7 +19,9 @@ func _on_attack_body_entered(body):
 		get_tree().get_root().set_disable_input(true)
 		
 		#RESETS ENEMY TO IDLE STATE
-		get_parent().patrolling = false
-		get_parent().chasing = false
-		get_parent().target = null
-		get_parent().get_node("Timer").start()
+		for i in get_tree().get_nodes_in_group("Enemy"):
+			if i.chasing == true:
+				i.patrolling = false
+				i.chasing = false
+				i.target = null
+				i.get_node("Timer").start()
